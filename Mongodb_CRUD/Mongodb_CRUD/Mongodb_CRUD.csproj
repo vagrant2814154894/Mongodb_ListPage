@@ -211,9 +211,14 @@
     <Content Include="js\plugins\peity\jquery.peity.min.js" />
     <Content Include="js\plugins\slimscroll\jquery.slimscroll.min.js" />
     <Content Include="js\welcome.min.js" />
+    <Content Include="MyJsCss\css\kkpager_blue.css" />
+    <Content Include="MyJsCss\css\kkpager_orange.css" />
+    <Content Include="MyJsCss\js\kkpager.js" />
+    <Content Include="MyJsCss\js\kkpager.min.js" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Web.config" />
+    <Content Include="目录说明.txt" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
