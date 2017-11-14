@@ -76,6 +76,22 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MongoDB.Bson, Version=2.4.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Bson.2.4.4\lib\net45\MongoDB.Bson.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=2.4.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.2.4.4\lib\net45\MongoDB.Driver.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core, Version=2.4.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.Core.2.4.4\lib\net45\MongoDB.Driver.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.0.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -117,17 +133,200 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="404.html" />
+    <Content Include="500.html" />
+    <Content Include="agile_board.html" />
+    <Content Include="article.html" />
+    <Content Include="badges_labels.html" />
+    <Content Include="basic_gallery.html" />
+    <Content Include="blog.html" />
+    <Content Include="blueimp.html" />
+    <Content Include="buttons.html" />
+    <Content Include="calendar.html" />
+    <Content Include="carousel.html" />
+    <Content Include="chat_view.html" />
+    <Content Include="clients.html" />
+    <Content Include="code_editor.html" />
+    <Content Include="contacts.html" />
+    <Content Include="css\animate.min.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\bootstrap.min14ed.css" />
+    <Content Include="css\demo\webuploader-demo.min.css" />
+    <Content Include="css\font-awesome.min93e3.css" />
+    <Content Include="css\login.min.css" />
+    <Content Include="css\patterns\header-profile-skin-1.png" />
+    <Content Include="css\patterns\header-profile-skin-3.png" />
+    <Content Include="css\patterns\header-profile.png" />
+    <Content Include="css\patterns\shattered.png" />
+    <Content Include="css\plugins\iCheck\custom.css" />
+    <Content Include="css\plugins\iCheck\green%402x.png" />
+    <Content Include="css\plugins\iCheck\green.png" />
+    <Content Include="css\style.min.css" />
+    <Content Include="css\style.min862f.css" />
+    <Content Include="css_animation.html" />
+    <Content Include="diff.html" />
+    <Content Include="draggable_panels.html" />
+    <Content Include="empty_page.html" />
+    <Content Include="faq.html" />
+    <Content Include="favicon.ico" />
+    <Content Include="file_manager.html" />
+    <Content Include="fontawesome.html" />
+    <Content Include="fonts\fontawesome-webfont93e3.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="form_advanced.html" />
+    <Content Include="form_avatar.html" />
+    <Content Include="form_basic.html" />
+    <Content Include="form_builder.html" />
+    <Content Include="form_editors.html" />
+    <Content Include="form_file_upload.html" />
+    <Content Include="form_markdown.html" />
+    <Content Include="form_simditor.html" />
+    <Content Include="form_validate.html" />
+    <Content Include="form_webuploader.html" />
+    <Content Include="form_wizard.html" />
+    <Content Include="forum_main.html" />
+    <Content Include="forum_post.html" />
     <Content Include="Global.asax" />
+    <Content Include="glyphicons.html" />
+    <Content Include="graph_echarts.html" />
+    <Content Include="graph_flot.html" />
+    <Content Include="graph_metrics.html" />
+    <Content Include="graph_morris.html" />
+    <Content Include="graph_peity.html" />
+    <Content Include="graph_rickshaw.html" />
+    <Content Include="graph_sparkline.html" />
+    <Content Include="grid_options.html" />
+    <Content Include="iconfont.html" />
+    <Content Include="icons.html" />
+    <Content Include="img\a1.jpg" />
+    <Content Include="img\a2.jpg" />
+    <Content Include="img\a3.jpg" />
+    <Content Include="img\a4.jpg" />
+    <Content Include="img\a5.jpg" />
+    <Content Include="img\a6.jpg" />
+    <Content Include="img\a7.jpg" />
+    <Content Include="img\a8.jpg" />
+    <Content Include="img\a9.jpg" />
+    <Content Include="img\bg.png" />
+    <Content Include="img\iconfont-logo.png" />
+    <Content Include="img\icons.png" />
+    <Content Include="img\index.jpg" />
+    <Content Include="img\index_4.jpg" />
+    <Content Include="img\loading-upload.gif" />
+    <Content Include="img\locked.png" />
+    <Content Include="img\login-background.jpg" />
+    <Content Include="img\p1.jpg" />
+    <Content Include="img\p2.jpg" />
+    <Content Include="img\p3.jpg" />
+    <Content Include="img\pay.png" />
+    <Content Include="img\profile.jpg" />
+    <Content Include="img\profile_big.jpg" />
+    <Content Include="img\profile_small.jpg" />
+    <Content Include="img\progress.png" />
+    <Content Include="img\p_big1.jpg" />
+    <Content Include="img\p_big2.jpg" />
+    <Content Include="img\p_big3.jpg" />
+    <Content Include="img\qr_code.png" />
+    <Content Include="img\success.png" />
+    <Content Include="img\user.png" />
+    <Content Include="img\wenku_logo.png" />
+    <Content Include="img\wz-1.png" />
+    <Content Include="index-2.html" />
+    <Content Include="index.html" />
+    <Content Include="index_3.html" />
+    <Content Include="index_4.html" />
+    <Content Include="index_v1.html" />
+    <Content Include="index_v148b2.html" />
+    <Content Include="index_v2.html" />
+    <Content Include="index_v3.html" />
+    <Content Include="index_v4.html" />
+    <Content Include="index_v5.html" />
+    <Content Include="invoice.html" />
+    <Content Include="invoice_print.html" />
+    <Content Include="javascript%3b.html" />
+    <Content Include="jstree.html" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\contabs.min.js" />
+    <Content Include="js\content.min.js" />
+    <Content Include="js\demo\bootstrap-table-demo.min.js" />
+    <Content Include="js\demo\echarts-demo.min.js" />
+    <Content Include="js\demo\flot-demo.min.js" />
+    <Content Include="js\demo\form-advanced-demo.min.js" />
+    <Content Include="js\demo\form-validate-demo.min.js" />
+    <Content Include="js\demo\layer-demo.min.js" />
+    <Content Include="js\demo\morris-demo.min.js" />
+    <Content Include="js\demo\peity-demo.min.js" />
+    <Content Include="js\demo\rickshaw-demo.min.js" />
+    <Content Include="js\demo\sparkline-demo.min.js" />
+    <Content Include="js\demo\treeview-demo.min.js" />
+    <Content Include="js\demo\webuploader-demo.min.js" />
+    <Content Include="js\hplus.min.js" />
+    <Content Include="js\jquery-ui-1.10.4.min.js" />
+    <Content Include="js\jquery-ui.custom.min.js" />
+    <Content Include="js\jquery.min.js" />
+    <Content Include="js\plugins\iCheck\icheck.min.js" />
+    <Content Include="js\plugins\layer\layer.min.js" />
+    <Content Include="js\plugins\metisMenu\jquery.metisMenu.js" />
+    <Content Include="js\plugins\pace\pace.min.js" />
+    <Content Include="js\plugins\peity\jquery.peity.min.js" />
+    <Content Include="js\plugins\slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="js\welcome.min.js" />
+    <Content Include="layer.html" />
+    <Content Include="layerdate.html" />
+    <Content Include="layouts.html" />
+    <Content Include="lockscreen.html" />
+    <Content Include="login.html" />
+    <Content Include="login_v2.html" />
+    <Content Include="mailbox.html" />
+    <Content Include="mail_compose.html" />
+    <Content Include="mail_detail.html" />
+    <Content Include="modal_window.html" />
+    <Content Include="nestable_list.html" />
+    <Content Include="notifications.html" />
+    <Content Include="pin_board.html" />
+    <Content Include="plyr.html" />
+    <Content Include="profile.html" />
+    <Content Include="projects.html" />
+    <Content Include="project_detail.html" />
+    <Content Include="register.html" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="search_results.html" />
+    <Content Include="social_feed.html" />
+    <Content Include="spinners.html" />
+    <Content Include="suggest.html" />
+    <Content Include="sweetalert.html" />
+    <Content Include="table_basic.html" />
+    <Content Include="table_bootstrap.html" />
+    <Content Include="table_data_tables.html" />
+    <Content Include="table_foo_table.html" />
+    <Content Include="table_jqgrid.html" />
+    <Content Include="tabs_panels.html" />
+    <Content Include="teams_board.html" />
+    <Content Include="timeline.html" />
+    <Content Include="timeline_v2.html" />
+    <Content Include="toastr_notifications.html" />
+    <Content Include="tree_view.html" />
+    <Content Include="tree_view_v2.html" />
+    <Content Include="typography.html" />
+    <Content Include="validation.html" />
     <Content Include="Web.config" />
+    <Content Include="webim.html" />
+    <Content Include="widgets.html" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\VehicleController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Common\BaseInfo.cs" />
+    <Compile Include="Models\enum\OutCode.cs" />
+    <Compile Include="Models\Common\OutResult.cs" />
+    <Compile Include="Models\Common\PageInfo.cs" />
+    <Compile Include="Models\enum\VehicleType.cs" />
+    <Compile Include="Models\VehicleItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -136,6 +335,19 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Views\Vehicle\Index.cshtml" />
+    <Content Include="fonts\fontawesome-webfont93e3.eot" />
+    <Content Include="fonts\fontawesome-webfont93e3.ttf" />
+    <Content Include="fonts\fontawesome-webfont93e3.woff" />
+    <Content Include="fonts\fontawesome-webfont93e3.woff2" />
+    <Content Include="fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regulard41d.eot" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="GET" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -145,8 +357,54 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
-    <Folder Include="Views\Vehicle\" />
+    <Folder Include="js\plugins\beautifyhtml\" />
+    <Folder Include="js\plugins\blueimp\" />
+    <Folder Include="js\plugins\bootstrap-table\" />
+    <Folder Include="js\plugins\chartJs\" />
+    <Folder Include="js\plugins\chosen\" />
+    <Folder Include="js\plugins\clockpicker\" />
+    <Folder Include="js\plugins\codemirror\" />
+    <Folder Include="js\plugins\colorpicker\" />
+    <Folder Include="js\plugins\cropper\" />
+    <Folder Include="js\plugins\datapicker\" />
+    <Folder Include="js\plugins\dataTables\" />
+    <Folder Include="js\plugins\diff_match_patch\" />
+    <Folder Include="js\plugins\dropzone\" />
+    <Folder Include="js\plugins\easypiechart\" />
+    <Folder Include="js\plugins\echarts\" />
+    <Folder Include="js\plugins\fancybox\" />
+    <Folder Include="js\plugins\flot\" />
+    <Folder Include="js\plugins\footable\" />
+    <Folder Include="js\plugins\fullcalendar\" />
+    <Folder Include="js\plugins\gritter\" />
+    <Folder Include="js\plugins\ionRangeSlider\" />
+    <Folder Include="js\plugins\jasny\" />
+    <Folder Include="js\plugins\jeditable\" />
+    <Folder Include="js\plugins\jqgrid\" />
+    <Folder Include="js\plugins\jquery-ui\" />
+    <Folder Include="js\plugins\jsKnob\" />
+    <Folder Include="js\plugins\jsTree\" />
+    <Folder Include="js\plugins\jvectormap\" />
+    <Folder Include="js\plugins\markdown\" />
+    <Folder Include="js\plugins\morris\" />
+    <Folder Include="js\plugins\nestable\" />
+    <Folder Include="js\plugins\nouslider\" />
+    <Folder Include="js\plugins\plyr\" />
+    <Folder Include="js\plugins\preetyTextDiff\" />
+    <Folder Include="js\plugins\prettyfile\" />
+    <Folder Include="js\plugins\rickshaw\" />
+    <Folder Include="js\plugins\simditor\" />
+    <Folder Include="js\plugins\sparkline\" />
+    <Folder Include="js\plugins\staps\" />
+    <Folder Include="js\plugins\suggest\" />
+    <Folder Include="js\plugins\summernote\" />
+    <Folder Include="js\plugins\sweetalert\" />
+    <Folder Include="js\plugins\switchery\" />
+    <Folder Include="js\plugins\toastr\" />
+    <Folder Include="js\plugins\treeview\" />
+    <Folder Include="js\plugins\validate\" />
+    <Folder Include="js\plugins\webuploader\" />
+    <Folder Include="plugins\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

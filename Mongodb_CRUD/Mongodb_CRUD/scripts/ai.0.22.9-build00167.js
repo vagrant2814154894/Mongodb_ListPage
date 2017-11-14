@@ -694,7 +694,7 @@ var Microsoft;
                         }
                     }
                     catch (e) {
-                        ApplicationInsights._InternalLogging.throwInternalNonUserActionable(ApplicationInsights.LoggingSeverity.CRITICAL, new ApplicationInsights._InternalLogMessage(ApplicationInsights._InternalMessageId.NONUSRACT_FailedMonitorAjaxOpen, "Failed to monitor XMLHttpRequest.open, monitoring data for this ajax call may be incorrect.", {
+                        ApplicationInsights._InternalLogging.throwInternalNonUserActionable(ApplicationInsights.LoggingSeverity.CRITICAL, new ApplicationInsights._InternalLogMessage(ApplicationInsights._InternalMessageId.NONUSRACT_FailedMonitorAjaxOpen, "Failed to monitor XMLHttpRequest.open, monitoring Data for this ajax call may be incorrect.", {
                             ajaxDiagnosticsMessage: AjaxMonitor.getFailedAjaxDiagnosticsMessage(this),
                             exception: Microsoft.ApplicationInsights.Util.dump(e)
                         }));
@@ -732,7 +732,7 @@ var Microsoft;
                         }
                     }
                     catch (e) {
-                        ApplicationInsights._InternalLogging.throwInternalNonUserActionable(ApplicationInsights.LoggingSeverity.CRITICAL, new ApplicationInsights._InternalLogMessage(ApplicationInsights._InternalMessageId.NONUSRACT_FailedMonitorAjaxSend, "Failed to monitor XMLHttpRequest, monitoring data for this ajax call may be incorrect.", {
+                        ApplicationInsights._InternalLogging.throwInternalNonUserActionable(ApplicationInsights.LoggingSeverity.CRITICAL, new ApplicationInsights._InternalLogMessage(ApplicationInsights._InternalMessageId.NONUSRACT_FailedMonitorAjaxSend, "Failed to monitor XMLHttpRequest, monitoring Data for this ajax call may be incorrect.", {
                             ajaxDiagnosticsMessage: AjaxMonitor.getFailedAjaxDiagnosticsMessage(this),
                             exception: Microsoft.ApplicationInsights.Util.dump(e)
                         }));
@@ -758,7 +758,7 @@ var Microsoft;
                         }
                     }
                     catch (e) {
-                        ApplicationInsights._InternalLogging.throwInternalNonUserActionable(ApplicationInsights.LoggingSeverity.CRITICAL, new ApplicationInsights._InternalLogMessage(ApplicationInsights._InternalMessageId.NONUSRACT_FailedMonitorAjaxAbort, "Failed to monitor XMLHttpRequest.abort, monitoring data for this ajax call may be incorrect.", {
+                        ApplicationInsights._InternalLogging.throwInternalNonUserActionable(ApplicationInsights.LoggingSeverity.CRITICAL, new ApplicationInsights._InternalLogMessage(ApplicationInsights._InternalMessageId.NONUSRACT_FailedMonitorAjaxAbort, "Failed to monitor XMLHttpRequest.abort, monitoring Data for this ajax call may be incorrect.", {
                             ajaxDiagnosticsMessage: AjaxMonitor.getFailedAjaxDiagnosticsMessage(this),
                             exception: Microsoft.ApplicationInsights.Util.dump(e)
                         }));
@@ -779,7 +779,7 @@ var Microsoft;
                     catch (e) {
                         var exceptionText = Microsoft.ApplicationInsights.Util.dump(e);
                         if (!exceptionText || exceptionText.toLowerCase().indexOf("c00c023f") == -1) {
-                            ApplicationInsights._InternalLogging.throwInternalNonUserActionable(ApplicationInsights.LoggingSeverity.CRITICAL, new ApplicationInsights._InternalLogMessage(ApplicationInsights._InternalMessageId.NONUSRACT_FailedMonitorAjaxRSC, "Failed to monitor XMLHttpRequest 'readystatechange' event handler, monitoring data for this ajax call may be incorrect.", {
+                            ApplicationInsights._InternalLogging.throwInternalNonUserActionable(ApplicationInsights.LoggingSeverity.CRITICAL, new ApplicationInsights._InternalLogMessage(ApplicationInsights._InternalMessageId.NONUSRACT_FailedMonitorAjaxRSC, "Failed to monitor XMLHttpRequest 'readystatechange' event handler, monitoring Data for this ajax call may be incorrect.", {
                                 ajaxDiagnosticsMessage: AjaxMonitor.getFailedAjaxDiagnosticsMessage(xhr),
                                 exception: Microsoft.ApplicationInsights.Util.dump(e)
                             }));
@@ -792,7 +792,7 @@ var Microsoft;
                 xhr.ajaxData.status = xhr.status;
                 xhr.ajaxData.CalculateMetrics();
                 if (xhr.ajaxData.ajaxTotalDuration < 0) {
-                    ApplicationInsights._InternalLogging.throwInternalNonUserActionable(ApplicationInsights.LoggingSeverity.WARNING, new ApplicationInsights._InternalLogMessage(ApplicationInsights._InternalMessageId.NONUSRACT_FailedMonitorAjaxDur, "Failed to calculate the duration of the ajax call, monitoring data for this ajax call won't be sent.", {
+                    ApplicationInsights._InternalLogging.throwInternalNonUserActionable(ApplicationInsights.LoggingSeverity.WARNING, new ApplicationInsights._InternalLogMessage(ApplicationInsights._InternalMessageId.NONUSRACT_FailedMonitorAjaxDur, "Failed to calculate the duration of the ajax call, monitoring Data for this ajax call won't be sent.", {
                         ajaxDiagnosticsMessage: AjaxMonitor.getFailedAjaxDiagnosticsMessage(xhr),
                         requestSentTime: xhr.ajaxData.requestSentTime,
                         responseFinishedTime: xhr.ajaxData.responseFinishedTime
@@ -1299,7 +1299,7 @@ var Microsoft;
                 function Sample(sampleRate) {
                     this.INT_MAX_VALUE = 2147483647;
                     if (sampleRate > 100 || sampleRate < 0) {
-                        ApplicationInsights._InternalLogging.throwInternalUserActionable(ApplicationInsights.LoggingSeverity.WARNING, new ApplicationInsights._InternalLogMessage(ApplicationInsights._InternalMessageId.USRACT_SampleRateOutOfRange, "Sampling rate is out of range (0..100). Sampling will be disabled, you may be sending too much data which may affect your AI service level.", { samplingRate: sampleRate }));
+                        ApplicationInsights._InternalLogging.throwInternalUserActionable(ApplicationInsights.LoggingSeverity.WARNING, new ApplicationInsights._InternalLogMessage(ApplicationInsights._InternalMessageId.USRACT_SampleRateOutOfRange, "Sampling rate is out of range (0..100). Sampling will be disabled, you may be sending too much Data which may affect your AI service level.", { samplingRate: sampleRate }));
                         this.sampleRate = 100;
                     }
                     this.sampleRate = sampleRate;
@@ -1602,7 +1602,7 @@ var Microsoft;
                     }
                 }
                 catch (e) {
-                    ApplicationInsights._InternalLogging.throwInternalNonUserActionable(ApplicationInsights.LoggingSeverity.CRITICAL, new ApplicationInsights._InternalLogMessage(ApplicationInsights._InternalMessageId.NONUSRACT_FailedToReportDataLoss, "Failed to report data loss: " + ApplicationInsights.Util.getExceptionName(e), { exception: ApplicationInsights.Util.dump(e) }));
+                    ApplicationInsights._InternalLogging.throwInternalNonUserActionable(ApplicationInsights.LoggingSeverity.CRITICAL, new ApplicationInsights._InternalLogMessage(ApplicationInsights._InternalMessageId.NONUSRACT_FailedToReportDataLoss, "Failed to report Data loss: " + ApplicationInsights.Util.getExceptionName(e), { exception: ApplicationInsights.Util.dump(e) }));
                 }
                 finally {
                     try {
