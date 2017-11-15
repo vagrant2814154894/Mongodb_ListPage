@@ -18,6 +18,7 @@
     <link href="/css/plugins/iCheck/custom.css" rel="stylesheet">
     <link href="/css/animate.min.css" rel="stylesheet">
     <link href="/css/style.min862f.css?v=4.1.0" rel="stylesheet">
+    <link href="~/MyJsCss/kkpager/kkpager_blue.css" rel="stylesheet" />
 
 </head>
 
@@ -31,48 +32,40 @@
                         <h5>车辆信息表</h5>
                     </div>
                     <div class="ibox-content">
-                      
-                            <table class="table table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>数据</th>
-                                        <th>用户</th>
-                                        <th>值</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>
-                                            <span class="line">5,3,2,-1,-3,-2,2,3,5,2</span>
-                                        </td>
-                                        <td>张三</td>
-                                        <td class="text-navy"> <i class="fa fa-level-up"></i> 40%</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>
-                                            <span class="line">5,3,9,6,5,9,7,3,5,2</span>
-                                        </td>
-                                        <td>李四</td>
-                                        <td class="text-warning"> <i class="fa fa-level-down"></i> -20%</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>
-                                            <span class="line">1,6,3,9,5,9,5,3,9,6,4</span>
-                                        </td>
-                                        <td>王麻子</td>
-                                        <td class="text-navy"> <i class="fa fa-level-up"></i> 26%</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div class="row">
+                            <div class="col-sm-9" style="display: none">
+                                <button type="button" class="btn btn-sm btn-primary" onclick="AddRoles()"> 创建车辆信息</button>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="input-group" style="display: none">
+                                    <input type="text" id="Id" placeholder="请输入车辆ID" class="input-sm form-control"> <span class="input-group-btn">
+                                        <button type="button" class="btn btn-sm btn-primary" onclick="Sub(1)"> 搜索</button>
+                                    </span>
+                                </div>
+                            </div>
 
                         </div>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>车辆ID</th>
+                                    <th>城市代码</th>
+                                    <th>经度</th>
+                                    <th>纬度</th>
+                                    <th>速度(千米/时)</th>
+                                    <th>方向(度)</th>
+                                    <th>最后定位时间</th>
+                                    <th>车辆类型</th>
+
+                                </tr>
+                            </thead>
+                            <tbody id="tables"></tbody>
+                        </table>
+                        <div id="kkpager"></div>
                     </div>
                 </div>
             </div>
+        </div>
 
     </div>
     <script src="/js/jquery.min.js?v=2.1.4"></script>
@@ -81,6 +74,14 @@
     <script src="/js/content.min.js?v=1.0.0"></script>
     <script src="/js/plugins/iCheck/icheck.min.js"></script>
     <script src="/js/demo/peity-demo.min.js"></script>
+    <script src="~/MyJsCss/kkpager/kkpager.js"></script>
+    <script src="~/scripts/Vehicle/Vehicle.js"></script>
+    <script type="text/javascript">
+        jQuery(function () {
+            Vehicle.getPageList();
+        });
+
+    </script>
     <script>
         $(document).ready(function () { $(".i-checks").iCheck({ checkboxClass: "icheckbox_square-green", radioClass: "iradio_square-green", }) });
     </script>

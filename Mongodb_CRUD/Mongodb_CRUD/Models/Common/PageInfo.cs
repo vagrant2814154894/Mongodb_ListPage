@@ -3,9 +3,9 @@
     public class PageInfo
     {
         /// <summary>
-        /// 总页数
+        /// 数据总量
         /// </summary>
-        public long TotalPage { get; set; }
+        public long TotalData { get; set; }
         /// <summary>
         /// 分页数据
         /// </summary>
@@ -13,7 +13,7 @@
 
         public PageInfo(long totalData, object pageData)
         {
-            this.TotalPage = totalData;
+            this.TotalData = totalData;
             this.PageData = pageData;
         }
     }
