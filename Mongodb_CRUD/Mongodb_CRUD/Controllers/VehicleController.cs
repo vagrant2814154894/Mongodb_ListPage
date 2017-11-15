@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using MongoDB.Bson;
 using MongoDB.Driver;
@@ -11,7 +9,7 @@ namespace Mongodb_CRUD.Controllers
 {
     public class VehicleController : Controller
     {
-        // GET: Vehicle
+    
         public ActionResult Index()
         {
             return View();
@@ -33,19 +31,24 @@ namespace Mongodb_CRUD.Controllers
 
                 var query = new BsonDocument();
                 long totalData = 0;
-                totalData = collection.CountAsync(query).Result;
-                //if (MemCachedManager.cache.KeyExists("totalData") && MemCachedManager.cache.Get("totalData") != null)
-                //{
-                //    total = (long)MemCachedManager.cache.Get("totalData");
-                //}
-                //else
-                //{
-                //    total = collection.CountAsync(query).Result;
-                //    MemCachedManager.cache.Set("totalData", total, DateTime.Now.AddMinutes(5));
-                //}
+
+                #region MenCached分布式缓存
+
+                if (MemCachedManager.cache.KeyExists("totalData") && MemCachedManager.cache.Get("totalData") != null)
+                {
+                    totalData = (long)MemCachedManager.cache.Get("totalData");
+                }
+                else
+                {
+                    totalData = collection.CountAsync(query).Result;
+                    MemCachedManager.cache.Set("totalData", totalData, DateTime.Now.AddMinutes(5));
+                }
+
+                #endregion
+
 
                 var sort = new BsonDocument("DTime", -1);
-
+                //分页需要进一步优化
                 var pageData = collection.Find(query).Sort(sort).Skip(pageSize * (pageIndex - 1)).Limit(pageSize).ToList();
 
                 result.Data = new PageInfo(totalData, pageData);
@@ -58,6 +61,7 @@ namespace Mongodb_CRUD.Controllers
                 result.Msg = ex.Message.ToString();
             }
 
+            //JsonResult需要封装一下
             JsonResult jsonResult = new JsonResult();
 
             jsonResult.Data = result;

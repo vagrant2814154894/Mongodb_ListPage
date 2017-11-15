@@ -43,6 +43,22 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Commons, Version=0.4.2.8580, Culture=neutral, PublicKeyToken=44382d1b57473eda">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dll\Memcached\Commons.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.84.0.0, Culture=neutral, PublicKeyToken=1b03e6acf1164f73">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dll\Memcached\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dll\Memcached\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Memcached.ClientLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=42c0400964dcc297, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dll\Memcached\Memcached.ClientLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -148,6 +164,10 @@
     <Content Include="css\plugins\iCheck\green.png" />
     <Content Include="css\style.min.css" />
     <Content Include="css\style.min862f.css" />
+    <Content Include="Dll\Memcached\Commons.dll" />
+    <Content Include="Dll\Memcached\ICSharpCode.SharpZipLib.dll" />
+    <Content Include="Dll\Memcached\log4net.dll" />
+    <Content Include="Dll\Memcached\Memcached.ClientLibrary.dll" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont93e3.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -230,6 +250,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Common\BaseInfo.cs" />
+    <Compile Include="Models\Common\MemCachedManager.cs" />
     <Compile Include="Models\enum\OutCode.cs" />
     <Compile Include="Models\Common\OutResult.cs" />
     <Compile Include="Models\Common\PageInfo.cs" />
@@ -254,6 +275,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regulard41d.eot" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

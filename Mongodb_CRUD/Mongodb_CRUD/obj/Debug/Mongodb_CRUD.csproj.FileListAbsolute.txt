@@ -109,3 +109,7 @@ F:\Code\Mongodb_ListPage\Mongodb_CRUD\Mongodb_CRUD\bin\zh-Hans\System.Web.Mvc.re
 F:\Code\Mongodb_ListPage\Mongodb_CRUD\Mongodb_CRUD\obj\Debug\Mongodb_CRUD.csprojResolveAssemblyReference.cache
 F:\Code\Mongodb_ListPage\Mongodb_CRUD\Mongodb_CRUD\obj\Debug\Mongodb_CRUD.dll
 F:\Code\Mongodb_ListPage\Mongodb_CRUD\Mongodb_CRUD\obj\Debug\Mongodb_CRUD.pdb
+F:\Code\Mongodb_ListPage\Mongodb_CRUD\Mongodb_CRUD\bin\Commons.dll
+F:\Code\Mongodb_ListPage\Mongodb_CRUD\Mongodb_CRUD\bin\ICSharpCode.SharpZipLib.dll
+F:\Code\Mongodb_ListPage\Mongodb_CRUD\Mongodb_CRUD\bin\log4net.dll
+F:\Code\Mongodb_ListPage\Mongodb_CRUD\Mongodb_CRUD\bin\Memcached.ClientLibrary.dll
