@@ -28,7 +28,7 @@ function selectPage(pageIndex, pageSize, Id, first) {
         success: function (result) {
             var html = "";
             if (result.Code == 0) {
-                initPage(result.Data.TotalData, first);
+                loadPage(result.Data.TotalData, first);
                 var da = result.Data;
                 for (var i = 0; i < da.PageData.length; i++) {
                     html += "<tr>";
@@ -130,8 +130,8 @@ function selectPage(pageIndex, pageSize, Id, first) {
     });
 }
 
-//初始化分页
-function initPage(totalData, first) {
+//加载分页控件
+function loadPage(totalData, first) {
     if (totalData >= 0) {
         totalRecords = totalData;
         totalPage = Math.ceil(totalRecords / pageSize);
