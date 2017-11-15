@@ -1,17 +1,4 @@
-﻿//(function ($) {
-//  'use strict';
-//  $(function () {
-
-//    var $fullText = $('.admin-fullText');
-//    $('#admin-fullscreen').on('click', function() {
-//      $.AMUI.fullscreen.toggle();
-//    });
-
-//    $(document).on($.AMUI.fullscreen.raw.fullscreenchange, function() {
-//      $fullText.text($.AMUI.fullscreen.isFullscreen ? '退出全屏' : '开启全屏');
-//    });
-//  });
-//})(jQuery);
+﻿
 
 Date.prototype.format = function (format) {
     var o = {
@@ -45,7 +32,6 @@ function ConvertTimeSpan(a) {
     else {
         var timespan = a.toString().substring(6, 19);
         var newDate = new Date(parseInt(timespan));
-        //newDate.setTime(timespan * 1000);
         return newDate.format('yyyy-MM-dd');
     }
 
@@ -65,23 +51,7 @@ function ConvertTimeSpan2(a) {
     }
 
 }
-//function getNowFormatDate() {
-//    var date = new Date();
-//    var seperator1 = "-";
-//    var seperator2 = ":";
-//    var month = date.getMonth() + 1;
-//    var strDate = date.getDate();
-//    if (month >= 1 && month <= 9) {
-//        month = "0" + month;
-//    }
-//    if (strDate >= 0 && strDate <= 9) {
-//        strDate = "0" + strDate;
-//    }
-//    var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate
-//            + " " + date.getHours() + seperator2 + date.getMinutes()
-//            + seperator2 + date.getSeconds();
-//    return currentdate;
-//}
+
 //获取当前时间
 function getNowFormatDate() {
     var date = new Date();
