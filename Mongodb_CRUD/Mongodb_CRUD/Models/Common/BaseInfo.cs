@@ -5,6 +5,6 @@
         /// <summary>
         /// 城市代码
         /// </summary>
-        public uint Citycode { get; set; }
+        public uint citycode { get; set; }
     }
 }

@@ -211,6 +211,7 @@
     <Content Include="js\plugins\peity\jquery.peity.min.js" />
     <Content Include="js\plugins\slimscroll\jquery.slimscroll.min.js" />
     <Content Include="js\welcome.min.js" />
+    <Content Include="MyJsCss\app.js" />
     <Content Include="MyJsCss\kkpager\kkpager_blue.css" />
     <Content Include="MyJsCss\kkpager\kkpager_orange.css" />
     <Content Include="MyJsCss\kkpager\kkpager.js" />

@@ -5,7 +5,7 @@ var pageSize = 10;
 var pageIndex = 1;
 PageList.prototype = {
     getPageList: function () {
-        Sub(1);
+        selectPage(pageIndex, pageSize);
     }
 }
 //查询
@@ -15,32 +15,31 @@ function Sub(index) {
     } else {
         selectPage(pageIndex, pageSize, $("#Id").val(), true);
     }
-
 }
-function selectPage(PageIndex, PageSize, Id, first) {
+
+function selectPage(pageIndex, pageSize, Id, first) {
     first = first == undefined ? true : first;
     jQuery.ajax({
         async: false,
         url: "/Vehicle/Post",
         type: "POST",
         dataType: "json",
-        data: { pageIndex: PageIndex, pageSize: PageSize },
+        data: { pageIndex: pageIndex, pageSize: pageSize },
         success: function (result) {
             var html = "";
             if (result.Code == 0) {
-                log(result.Data.TotalData, first);
+                initPage(result.Data.TotalData, first);
                 var da = result.Data;
                 for (var i = 0; i < da.PageData.length; i++) {
                     html += "<tr>";
-                    html += "<td>" + da.PageData[i].VehicleId + "</td>";
-                    html += "<td>" + da.PageData[i].Citycode + "</td>";
-                    html += "<td>" + da.PageData[i].Lng + "</td>";
-                    html += "<td>" + da.PageData[i].Lat + "</td>";
-                    html += "<td>" + da.PageData[i].Speed + "</td>";
-                    html += "<td>" + da.PageData[i].Direction + "</td>";
-
-                    //html += "<td>" + ConvertTimeSpan2(da.Data[i].dTime) + "</td>";
-                    switch (da.PageData[i].VType) {
+                    html += "<td>" + da.PageData[i].vehicleId + "</td>";
+                    html += "<td>" + da.PageData[i].citycode + "</td>";
+                    html += "<td>" + da.PageData[i].lng + "</td>";
+                    html += "<td>" + da.PageData[i].lat + "</td>";
+                    html += "<td>" + da.PageData[i].speed + "</td>";
+                    html += "<td>" + da.PageData[i].direction + "</td>";
+                    html += "<td>" + ConvertTimeSpan2(da.PageData[i].dTime) + "</td>";
+                    switch (da.PageData[i].vType) {
                         case 11:
                             {
                                 html += "<td>" + "省际客运班车" + "</td>";
@@ -118,8 +117,7 @@ function selectPage(PageIndex, PageSize, Id, first) {
                                 break;
                             }
                     }
-                    //html += "<td>" + da.Data[i].vType + "</td>";
-
+                  
                     html += "</tr>";
                 }
                 $("#tables").html(html);
@@ -131,9 +129,11 @@ function selectPage(PageIndex, PageSize, Id, first) {
         }
     });
 }
-function log(TotalCount, first) {
-    if (TotalCount >= 0) {
-        totalRecords = TotalCount;
+
+//初始化分页
+function initPage(totalData, first) {
+    if (totalData >= 0) {
+        totalRecords = totalData;
         totalPage = Math.ceil(totalRecords / pageSize);
         var pageNo = pageIndex;
         if (!pageNo) {
@@ -149,8 +149,9 @@ function log(TotalCount, first) {
             totalRecords: totalRecords,
             mode: 'click',//默认值是link，可选link或者click
             click: function (n) {
-                pageIndex = n;
-                selectPage(n, pageSize, $("#Id").val(), true);
+                Sub(n);
+                //pageIndex = n;
+                //selectPage(n, pageSize, $("#Id").val(), true);
                 return false;
             }
 
