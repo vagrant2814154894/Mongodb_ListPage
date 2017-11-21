@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mongodb_CRUD", "Mongodb_CRUD\Mongodb_CRUD.csproj", "{27E654A9-14D1-41DA-A9FF-27C65306590A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mongodb_crud_Demo", "Mongodb_crud_Demo\Mongodb_crud_Demo.csproj", "{4236AE59-C354-45D1-ADD7-B5D5427496B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{27E654A9-14D1-41DA-A9FF-27C65306590A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27E654A9-14D1-41DA-A9FF-27C65306590A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27E654A9-14D1-41DA-A9FF-27C65306590A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4236AE59-C354-45D1-ADD7-B5D5427496B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4236AE59-C354-45D1-ADD7-B5D5427496B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4236AE59-C354-45D1-ADD7-B5D5427496B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4236AE59-C354-45D1-ADD7-B5D5427496B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
