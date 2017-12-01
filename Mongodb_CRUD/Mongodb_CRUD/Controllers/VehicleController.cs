@@ -43,7 +43,7 @@ namespace Mongodb_CRUD.Controllers
                     totalData = collection.CountAsync(query).Result;
                     MemCachedManager.cache.Set("totalData", totalData, DateTime.Now.AddMinutes(5));
                 }
-
+               
                 #endregion
 
 

@@ -276,6 +276,7 @@
     <Content Include="fonts\glyphicons-halflings-regulard41d.eot" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="packages.config" />
+    <Content Include="H+源码\hplus V4.1.0.zip" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
