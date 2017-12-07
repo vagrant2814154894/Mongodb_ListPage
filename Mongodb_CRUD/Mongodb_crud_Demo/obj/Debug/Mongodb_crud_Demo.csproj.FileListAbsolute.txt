@@ -1,0 +1,13 @@
+F:\Code\Mongodb_ListPage\Mongodb_CRUD\Mongodb_crud_Demo\bin\Debug\Mongodb_crud_Demo.exe.config
+F:\Code\Mongodb_ListPage\Mongodb_CRUD\Mongodb_crud_Demo\bin\Debug\Mongodb_crud_Demo.exe
+F:\Code\Mongodb_ListPage\Mongodb_CRUD\Mongodb_crud_Demo\bin\Debug\Mongodb_crud_Demo.pdb
+F:\Code\Mongodb_ListPage\Mongodb_CRUD\Mongodb_crud_Demo\bin\Debug\MongoDB.Bson.dll
+F:\Code\Mongodb_ListPage\Mongodb_CRUD\Mongodb_crud_Demo\bin\Debug\MongoDB.Driver.Core.dll
+F:\Code\Mongodb_ListPage\Mongodb_CRUD\Mongodb_crud_Demo\bin\Debug\MongoDB.Driver.dll
+F:\Code\Mongodb_ListPage\Mongodb_CRUD\Mongodb_crud_Demo\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+F:\Code\Mongodb_ListPage\Mongodb_CRUD\Mongodb_crud_Demo\bin\Debug\MongoDB.Bson.xml
+F:\Code\Mongodb_ListPage\Mongodb_CRUD\Mongodb_crud_Demo\bin\Debug\MongoDB.Driver.xml
+F:\Code\Mongodb_ListPage\Mongodb_CRUD\Mongodb_crud_Demo\bin\Debug\MongoDB.Driver.Core.xml
+F:\Code\Mongodb_ListPage\Mongodb_CRUD\Mongodb_crud_Demo\obj\Debug\Mongodb_crud_Demo.csprojResolveAssemblyReference.cache
+F:\Code\Mongodb_ListPage\Mongodb_CRUD\Mongodb_crud_Demo\obj\Debug\Mongodb_crud_Demo.exe
+F:\Code\Mongodb_ListPage\Mongodb_CRUD\Mongodb_crud_Demo\obj\Debug\Mongodb_crud_Demo.pdb
