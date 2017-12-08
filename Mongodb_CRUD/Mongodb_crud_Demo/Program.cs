@@ -50,11 +50,11 @@ namespace Mongodb_crud_Demo
             {
                 var wxItems = new List<WxItem>();
                 List<string> openIds = new List<string>();
-                //openIds.Add("11");
-                //openIds.Add("12");
+                openIds.Add("11");
+                openIds.Add("12");
                 openIds.Add("13");
                 openIds.Add("11");
-                //wxIds.Add(new WxItem() { openId = openIds, appId = "1" });
+                wxItems.Add(new WxItem() { openId = openIds, appId = "1" });
                 wxItems.Add(new WxItem() { openId = openIds, appId = "2" });
                 var wxItem1 = new WxItem() { openId = openIds, appId = "2" };
 
@@ -68,6 +68,13 @@ namespace Mongodb_crud_Demo
 
                 //var update0 = new BsonDocument() { { "$set", BsonDocumentWrapper.Create(new { cNo = cNo }) } };
                 //requests.Add(new UpdateOneModel<BsonDocument>(new BsonDocument(), update0) { IsUpsert = true });
+
+
+                //BsonDocument queryAll = new BsonDocument("cNo", cNo);
+                //var updateAll = new BsonDocument() { { "$set", BsonDocumentWrapper.Create(wxInfo) } };
+                //requests.Add(new UpdateOneModel<BsonDocument>(queryAll, updateAll) { IsUpsert = true });//存在则更新，不存在则新增
+
+              
 
                 #region 创建或者更新cNo
 
@@ -86,7 +93,15 @@ namespace Mongodb_crud_Demo
                 #endregion
 
 
-                #region 修改数组内数组对象
+                #region 修改appId
+
+                BsonDocument queryUp = new BsonDocument("wxInfo.appId", "2");
+                var upData = new BsonDocument("wxInfo.$.appId", "88");
+                var upDates = new BsonDocument { { "$set", upData } };
+                requests.Add(new UpdateManyModel<BsonDocument>(queryUp, upDates) { IsUpsert = true });
+                #endregion
+
+                #region 修改数组内数组对象 openid
 
                 BsonDocument query1 = new BsonDocument("cNo", cNo);
                 query1.AddRange(new BsonDocument("wxInfo.appId", "2"));
@@ -95,14 +110,15 @@ namespace Mongodb_crud_Demo
                 requests.Add(new UpdateOneModel<BsonDocument>(query1, update1) { IsUpsert = true });
 
                 #endregion
+
+
+
             }
 
             if (requests.Count > 0)
             {
                 db.GetCollection<BsonDocument>("tblWX").BulkWrite(requests);
             }
-
-
 
 
 
