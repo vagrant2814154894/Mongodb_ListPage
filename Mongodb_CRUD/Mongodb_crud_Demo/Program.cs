@@ -9,6 +9,9 @@ using MongoDB.Driver;
 
 namespace Mongodb_crud_Demo
 {
+    /// <summary>
+    /// 需要帮助文档来理解下参数，否则此demo毫无意义
+    /// </summary>
     class Program
     {
 
@@ -22,6 +25,24 @@ namespace Mongodb_crud_Demo
             MongoClient client = new MongoClient(connectionString);//连接mogodb数据库
             IMongoDatabase db = client.GetDatabase(database, mdSetting);//数据库
             var collection = db.GetCollection<CrudItem>("tblCrud");//表
+
+
+            #region 数据格式
+
+            //        {
+            //            "_id" : ObjectId("5a0e7e693f5f71cb94f67eeb"), 
+            //            "cNo" : "1064831844371", 
+            //            "wxInfo" :[
+            //                         {
+            //                     "appId" : "BaianElectron",
+            //                     "openid" : [
+            //                            "o52vWwZGKUh3lohKqjPkZEBp9byY"
+            //                                ]
+            //                          }
+            //                      ]
+            //          }
+
+            #endregion
 
             List<WriteModel<BsonDocument>> requests = new List<WriteModel<BsonDocument>>();
 
@@ -44,16 +65,20 @@ namespace Mongodb_crud_Demo
                     wxInfo = wxItems
                 };
 
-                #region 新增
 
                 //var update0 = new BsonDocument() { { "$set", BsonDocumentWrapper.Create(new { cNo = cNo }) } };
                 //requests.Add(new UpdateOneModel<BsonDocument>(new BsonDocument(), update0) { IsUpsert = true });
 
+                #region 创建或者更新cNo
 
                 BsonDocument query = new BsonDocument("cNo", cNo);
                 var update = new BsonDocument() { { "$set", BsonDocumentWrapper.Create(new { cNo = cNo }) } };
                 requests.Add(new UpdateOneModel<BsonDocument>(query, update) { IsUpsert = true });//存在则更新，不存在则新增
 
+                #endregion
+
+
+                #region 创建或者更新wxInfo
 
                 var updateSet = new BsonDocument() { { "$addToSet", new BsonDocument() { { "wxInfo", BsonDocumentWrapper.Create(wxItem1) } } } };
                 requests.Add(new UpdateOneModel<BsonDocument>(query, updateSet) { IsUpsert = true });
@@ -61,16 +86,7 @@ namespace Mongodb_crud_Demo
                 #endregion
 
 
-
                 #region 修改数组内数组对象
-
-                //BsonDocument query1 = new BsonDocument("cNo", cNo);
-                //query1.AddRange(new BsonDocument("wxInfo.appId", "2"));
-                //var data = new BsonDocument("wxInfo.$.openId", new BsonDocument("$each", BsonDocumentWrapper.Create(new string[] { "16" })));
-                //var update1 = new BsonDocument() { { "$addToSet", data } };//存在则修改，不存在则新增
-                //requests.Add(new UpdateOneModel<BsonDocument>(query1, update1) { IsUpsert = true });
-
-
 
                 BsonDocument query1 = new BsonDocument("cNo", cNo);
                 query1.AddRange(new BsonDocument("wxInfo.appId", "2"));
